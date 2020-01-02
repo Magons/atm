@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  balance: 1
+  notes: 
+
+two:
+  balance: 1
+  notes: 

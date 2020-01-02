@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  denomination: 1
+  quantity: 1
+  atm_machine: one
+
+two:
+  denomination: 1
+  quantity: 1
+  atm_machine: two
