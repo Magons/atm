@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+atm = AtmMachine.create!
+Banknote::NOTES.each do |n|
+  Banknote.create(denomination: n, quantity: rand(10), atm_machine: atm)
+end

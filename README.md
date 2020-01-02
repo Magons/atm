@@ -1,24 +1,26 @@
-# README
+# Реализовать банкомат в виде RESTful API.
+  1) Должна быть функция "заправки" денег в банкомат - отправляется количество купюр каждого номинала (например, 10 купюр по "50", 8 по "25" и т.д.). Номиналы бывают: 1, 2, 5, 10, 25, 50.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+  2) Реализовать метод который принимает сумму для выдачи и возвращает нужные номиналы. Если в банкомате не хватает денег для выдачи - пользователь должен получить сообщение об этом.
+  ```
+  Например, если поступил запрос на выдачу 200 грн, а в наличии есть 3 купюры по 50 и 4 по 25, то результат может быть таким: {50 => 3, 25 => 2} или {50 => 2, 25 => 4}.
 
-Things you may want to cover:
+  Количество денег в наличии должно уменьшаться после каждой выдачи.
+  ```
 
-* Ruby version
+  3) Задачу оформить в виде RESTful API, фреймворк - можно выбрать любой который считаете более подходящим для данной задачи. В ShipHawk для API мы используем Grape, поэтому его использование очень предпочтительно.
 
-* System dependencies
+## Setup
 
-* Configuration
+```
+$ rails db:create
+$ raild db:migrate
+$ rails db:seed
+```
 
-* Database creation
+## Requests examples
+```
+$ curl -X POST http://localhost:3000/api/v1/atms/:id/insert -d 'banknotes[50]=4'
+$ curl -X POST http://localhost:3000/api/v1/atms/:id/withdraw -d 'amount=102'
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
